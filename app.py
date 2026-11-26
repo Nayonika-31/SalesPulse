@@ -584,9 +584,9 @@ st.write("")
 
 # ---------- Main Navigation Tabs ----------
 tab_overview, tab_leads, tab_pipeline = st.tabs([
-    "📊 Executive Overview",
-    "🎯 Lead Intelligence",
-    "⚡ Pipeline & Velocity",
+    "Executive Overview",
+    "Lead Intelligence",
+    "Pipeline & Velocity",
 ])
 
 # ==================== TAB 1: EXECUTIVE OVERVIEW ====================
