@@ -1,36 +1,24 @@
-```markdown
 # SalesPulse
 
-A sales pipeline and revenue dashboard built with Python, Streamlit, Pandas, and Plotly.
+A sales dashboard built with Python, Streamlit, Pandas, and Plotly.
 
-I built this to solve a common problem for small B2B sales teams: figuring out which deals are actually moving, which ones are stalling, and where reps should focus their follow-ups without digging through messy spreadsheets.
+Spreadsheets make it tough to see which deals are actually moving and which ones are stuck. I built SalesPulse to keep track of revenue, spot stalled deals, and see which accounts need a follow-up right away.
 
-## What's inside
+## What is inside
 
-* **Overview:** Tracks closed-won revenue, open pipeline, weighted forecast, and win rate. Includes monthly vs. cumulative revenue pacing, product-line revenue share, a regional and product heatmap, and channel performance.
-* **Lead Intelligence:** Plots account engagement against deal size so high-value active leads stand out immediately. Lets you filter by intent signal (pricing page visits, funding announcements, hiring growth), export filtered CSVs, and pull up a quick follow-up brief for any account.
-* **Pipeline & Velocity:** Breaks down open deals by industry and funnel stage, shows deal-size distributions, compares rep performance, and flags opportunities that have gone quiet for 21+ days.
-* **Sidebar Filters:** Slice the entire dashboard live by region, industry, sales owner, and product line.
+Overview shows total won revenue, open pipeline, win rate, and monthly sales trends, along with breakdowns by product and region.
 
-## Project structure
+Lead Intelligence helps find the best accounts to contact next. It compares engagement against deal size, lets you filter by buying signals like pricing page visits or new funding, and gives a quick follow-up tip for each lead.
 
-```text
-SalesPulse/
-├── .streamlit/
-│   └── config.toml          # Theme colors and typography
-├── data/
-│   └── sales_leads.csv      # 800 synthetic B2B prospect records
-├── sql/
-│   └── analysis_queries.sql # SQL equivalents for the core pipeline metrics
-├── app.py                   # Main Streamlit application
-├── requirements.txt         # Python dependencies
-└── README.md
+Pipeline and Velocity breaks down open deals by industry and sales stage, compares rep performance, and flags deals that have had no activity for over 21 days.
+
+Use the sidebar filters to sort everything by region, industry, sales owner, or product.
+
+## How to run it
+
+Clone the repo, install the libraries, and run Streamlit:
 
 ```
-
-## Running it locally
-
-```bash
 git clone [https://github.com/Nayonika-31/SalesPulse.git](https://github.com/Nayonika-31/SalesPulse.git)
 cd SalesPulse
 python -m pip install -r requirements.txt
@@ -38,13 +26,8 @@ python -m streamlit run app.py
 
 ```
 
-Open `http://localhost:8501` in your browser once Streamlit starts.
+Open http://localhost:8501 in your browser once it starts.
 
-## Notes on the data
+## About the data
 
-* Everything in `data/sales_leads.csv` (800 accounts, deal values, contacts, and activity dates) is synthetic data generated for this project.
-* Priority scores are rule-based, calculated from engagement score, recent intent signals, and days since last touch, rather than a black-box ML model.
-
-```
-
-```
+`data/sales_leads.csv` has 800 sample B2B sales records made for this project. Priority scores are calculated using simple rules based on engagement, buying signals, and recent activity. SQL versions of the main queries are in `sql/analysis_queries.sql`.
